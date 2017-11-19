@@ -1,0 +1,52 @@
+@import "~themes/vars";
+
+.numberCard {
+  padding: 32px;
+  margin-bottom: 24px;
+  cursor: pointer;
+
+  .iconWarp {
+    font-size: 54px;
+    float: left;
+  }
+  .figure {
+    width: 100%;
+    margin-bottom:15px;
+    img {
+      width:60%;
+      height:145px;
+    }
+    .tap {
+      width:28%;
+      position: absolute;
+      top: 32px;
+      left: 60%;
+      .title {
+        line-height: 16px;
+        font-size: 16px;
+        margin-bottom: 2em;
+        height: 16px;
+      }
+    }
+
+  }
+
+  .content {
+    width: 100%;
+    .number {
+      border:none;
+      border-radius:5px;
+      height: 32px;
+      font-size:14px;
+      width:100%;
+      color:#fff;
+      background-color:@button-blue-bg;
+      transition:all 0.2s ease-in;
+      &:hover {
+        background-color:#fff;
+        color:@button-blue-bg;
+        border:1px solid @button-blue-bg;
+      }
+    }
+  }
+}
