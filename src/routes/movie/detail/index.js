@@ -4,7 +4,9 @@ import {
   connect
 } from 'dva'
 import styles from './index.less'
-
+import {
+  Link
+} from 'react-router-dom'
 const MDetail = ({
   movieDetail
 }) => {
@@ -33,17 +35,16 @@ const MDetail = ({
         play_time,
         story,
         img_urls,*/
-    /*  const content = []
-      for (let key in data) {
-        if ({}.hasOwnProperty.call(data, key)) {
-          content.push(<div key={key} className={styles.item}>
-            <div>{key}</div>
-            <div>{String(data[key])}</div>
-          </div>)
-        }
-      }*/
+  const images = []
+  for (let key in img_urls) {
+
+    images.push(<li><img src={String(img_urls[key])}></img></li>)
+
+  }
+  console.log(images)
   return (
     <div className="content-inner">
+      <Link to="/dashboard"><div className={styles.buy}>购票</div></Link>
       <div className={styles.content}>
         <div className={styles.poster}>
           <img src={data.img_url}></img>
@@ -52,6 +53,7 @@ const MDetail = ({
           <div className={styles.movieContent}>
               <h5>上映日期：{data.pub_date}</h5>
               <ul>
+                  <li>影名：{data.name}</li>
                   <li>导演：{data.director}</li>
                   <li>主演：{data.actors}</li>
                   <li>类型：{data.type}</li>
@@ -60,7 +62,11 @@ const MDetail = ({
                   <li>片长：{data.play_time}分钟</li>
                   <li>影片剧情：{data.story}</li>
                   <li>影片剧照：</li>
-                  <li><img src={img_urls}></img></li>
+                  <li>
+                    <ul className={styles.imgList}>
+                      {images}  
+                    </ul>
+                  </li>
               </ul>
           </div>
         </div>

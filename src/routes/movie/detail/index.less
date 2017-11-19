@@ -1,7 +1,7 @@
 .content {
   line-height: 2.4;
   font-size: 13px;
-
+  
   .item {
     display: flex;
 
@@ -23,8 +23,41 @@
   .moviePanel{
     margin:10px 7%;
     .movieContent{
-
+      .imgList{
+        li{
+          float:left;
+          width:175px;
+          height:129px;
+          img{
+            width:99%;
+            height:97%;
+          }
+        }
+      }
+      &:after{
+        display:block;
+        content:'';
+        height:0;
+        clear:both;
+      }
     }
   }
 }
-
+.buy {
+    position: absolute;
+    top: -48px;
+    right: 100px;
+    width: 92px;
+    font-size: 18px;
+    line-height: 36px;
+    background-color: #34baca;
+    height: 36px;
+    color: #fff;
+    text-align: center;
+    cursor:pointer;
+    &:hover{
+      background-color: #fff;
+      border:1px solid #34baca;
+      color:#34baca;
+    }
+  }
