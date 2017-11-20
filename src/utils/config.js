@@ -18,6 +18,7 @@ module.exports = {
     userLogout: `${APIV1}/user/logout`,
     userInfo: `${APIV1}/userInfo`,
     users: `${APIV1}/users`,
+    tickets: `${APIV1}/tickets`,
     posts: `${APIV1}/posts`,
     user: `${APIV1}/user/:id`,
     movie: `${APIV1}/movie/:id`,

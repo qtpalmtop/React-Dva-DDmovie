@@ -18,33 +18,16 @@ const MDetail = ({
   let {
     img_urls
   } = data
-  console.log(img_urls)
-    //img_urls = [...img_urls]
-    //img_urls.map(item => <li><img src={item}></img></li>)
-  console.log(typeof(img_urls))
-    /*  id,
-        name,
-        tap,
-        img_url,
-        pub_date,
-        director,
-        actors,
-        type,
-        country,
-        version,
-        play_time,
-        story,
-        img_urls,*/
+
   const images = []
   for (let key in img_urls) {
-
-    images.push(<li><img src={String(img_urls[key])}></img></li>)
-
+    images.push(<li key={key}><img src={String(img_urls[key])}></img></li>)
   }
   console.log(images)
+
   return (
     <div className="content-inner">
-      <Link to="/dashboard"><div className={styles.buy}>购票</div></Link>
+      <Link to="/ticket"><div className={styles.buy}>购票</div></Link>
       <div className={styles.content}>
         <div className={styles.poster}>
           <img src={data.img_url}></img>

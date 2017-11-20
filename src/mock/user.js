@@ -23,8 +23,19 @@ let usersListData = Mock.mock({
   }, ],
 })
 
+let ticketsListData = Mock.mock({
+  'data|6-10': [{
+    'id|1-6': 1,
+    filmName: '速度与激情8',
+    'seats|11-99': 1,
+    'price|25-35': 1,
+    playDate: '@datetime',
+  }, ],
+})
+
 
 let database = usersListData.data
+let tdatabase = ticketsListData.data
 
 const EnumRoleType = {
   ADMIN: 'admin',
@@ -177,6 +188,35 @@ module.exports = {
               }
               return true
             }
+            return String(item[key]).trim().indexOf(decodeURI(other[key]).trim()) > -1
+          }
+          return true
+        })
+      }
+    }
+
+    res.status(200).json({
+      data: newData.slice((page - 1) * pageSize, page * pageSize),
+      total: newData.length,
+    })
+  },
+
+  [`GET ${apiPrefix}/tickets`](req, res) {
+    const {
+      query
+    } = req
+    let {
+      pageSize,
+      page,
+      ...other
+    } = query
+    pageSize = pageSize || 10
+    page = page || 1
+    let newData = tdatabase
+    for (let key in other) {
+      if ({}.hasOwnProperty.call(other, key)) {
+        newData = newData.filter((item) => {
+          if ({}.hasOwnProperty.call(item, key)) {
             return String(item[key]).trim().indexOf(decodeURI(other[key]).trim()) > -1
           }
           return true

@@ -1,12 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
-import { FilterItem } from 'components'
-import { Form, Button, Row, Col, DatePicker, Input, Cascader, Switch } from 'antd'
+import {
+  FilterItem
+} from 'components'
+import {
+  Form,
+  Button,
+  Row,
+  Col,
+  DatePicker,
+  Input,
+  Cascader,
+  Switch
+} from 'antd'
 import city from '../../utils/city'
 
 const Search = Input.Search
-const { RangePicker } = DatePicker
+const {
+  RangePicker
+} = DatePicker
 
 const ColProps = {
   xs: 24,
@@ -34,7 +47,9 @@ const Filter = ({
   },
 }) => {
   const handleFields = (fields) => {
-    const { createTime } = fields
+    const {
+      createTime
+    } = fields
     if (createTime.length) {
       fields.createTime = [createTime[0].format('YYYY-MM-DD'), createTime[1].format('YYYY-MM-DD')]
     }
@@ -68,7 +83,10 @@ const Filter = ({
     fields = handleFields(fields)
     onFilterChange(fields)
   }
-  const { name, address } = filter
+  const {
+    name,
+    address
+  } = filter
 
   let initialCreateTime = []
   if (filter.createTime && filter.createTime[0]) {
@@ -94,24 +112,12 @@ const Filter = ({
           />)}
       </Col>
       <Col {...ColProps} xl={{ span: 6 }} md={{ span: 8 }} sm={{ span: 12 }}>
-        <FilterItem label="Createtime">
-          {getFieldDecorator('createTime', { initialValue: initialCreateTime })(
-            <RangePicker style={{ width: '100%' }} size="large" onChange={handleChange.bind(null, 'createTime')} />
-          )}
-        </FilterItem>
-      </Col>
-      <Col {...TwoColProps} xl={{ span: 10 }} md={{ span: 24 }} sm={{ span: 24 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-          <div >
+        <div >
             <Button type="primary" size="large" className="margin-right" onClick={handleSubmit}>Search</Button>
             <Button size="large" onClick={handleReset}>Reset</Button>
           </div>
-          <div>
-            <Switch style={{ marginRight: 16 }} size="large" defaultChecked={isMotion} onChange={switchIsMotion} checkedChildren={'Motion'} unCheckedChildren={'Motion'} />
-            <Button size="large" type="ghost" onClick={onAdd}>Create</Button>
-          </div>
-        </div>
       </Col>
+      
     </Row>
   )
 }

@@ -13,9 +13,9 @@ let database = [{
 }, {
   id: '2',
   bpid: '1',
-  name: 'Users',
-  icon: 'user',
-  route: '/user',
+  name: 'Tickets',
+  icon: 'shopping-cart',
+  route: '/ticket',
 }, {
   id: '7',
   bpid: '1',

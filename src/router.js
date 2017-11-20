@@ -30,7 +30,7 @@ const Routers = function({
     component: () =>
       import ('./routes/dashboard/'),
   }, {
-    path: '/user',
+    path: '/ticket',
     models: () => [
       import ('./models/user')
     ],
