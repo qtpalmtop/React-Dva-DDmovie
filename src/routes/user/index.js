@@ -87,13 +87,9 @@ const User = ({
         payload: id,
       })
     },
-    onEditItem(item) {
+    onEditItem(id) {
       dispatch({
-        type: 'user/showModal',
-        payload: {
-          modalType: 'update',
-          currentItem: item,
-        },
+        type: 'post/query',
       })
     },
     rowSelection: {

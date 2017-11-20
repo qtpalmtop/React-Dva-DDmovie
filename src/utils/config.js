@@ -19,6 +19,7 @@ module.exports = {
     userInfo: `${APIV1}/userInfo`,
     users: `${APIV1}/users`,
     tickets: `${APIV1}/tickets`,
+    orders: `${APIV1}/orders`,
     posts: `${APIV1}/posts`,
     user: `${APIV1}/user/:id`,
     movie: `${APIV1}/movie/:id`,

@@ -33,7 +33,6 @@ let ticketsListData = Mock.mock({
   }, ],
 })
 
-
 let database = usersListData.data
 let tdatabase = ticketsListData.data
 

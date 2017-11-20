@@ -23,6 +23,13 @@ const Routers = function({
       import ('./routes/error'),
   })
   const routes = [{
+    path: '/',
+    models: () => [
+      import ('./models/dashboard')
+    ],
+    component: () =>
+      import ('./routes/dashboard/'),
+  }, {
     path: '/dashboard',
     models: () => [
       import ('./models/dashboard')
@@ -98,7 +105,7 @@ const Routers = function({
     component: () =>
       import ('./routes/chart/Recharts/'),
   }, {
-    path: '/post',
+    path: '/order',
     models: () => [
       import ('./models/post')
     ],

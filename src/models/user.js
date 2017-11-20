@@ -16,6 +16,7 @@ import {
 const {
   query
 } = ticketsService
+
 const {
   prefix
 } = config

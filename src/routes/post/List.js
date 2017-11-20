@@ -1,41 +1,49 @@
 import React from 'react'
-import { Table } from 'antd'
+import {
+  Table
+} from 'antd'
 import styles from './List.less'
 
-const List = ({ ...tableProps }) => {
-  const columns = [
-    {
-      title: 'Image',
-      dataIndex: 'image',
-      className: styles.image,
-      width: 64,
-      render: text => <img alt="Feture" width={26} src={text} />,
-    }, {
-      title: 'Title',
-      dataIndex: 'title',
-    }, {
-      title: 'Author',
-      dataIndex: 'author',
-    }, {
-      title: 'Categories',
-      dataIndex: 'categories',
-    }, {
-      title: 'Tags',
-      dataIndex: 'tags',
-    }, {
-      title: 'Visibility',
-      dataIndex: 'visibility',
-    }, {
-      title: 'Comments',
-      dataIndex: 'comments',
-    }, {
-      title: 'Views',
-      dataIndex: 'views',
-    }, {
-      title: 'Date',
-      dataIndex: 'date',
+const List = ({...tableProps
+}) => {
+  const columns = [{
+    title: '订单编号',
+    dataIndex: 'id',
+    className: styles.image,
+  }, {
+    title: '影片名称',
+    dataIndex: 'filmName',
+  }, {
+    title: '购票人',
+    dataIndex: 'userName',
+  }, {
+    title: '座位',
+    dataIndex: 'position',
+  }, {
+    title: '票价',
+    dataIndex: 'price',
+  }, {
+    title: '放映时间',
+    dataIndex: 'playDate',
+  }, {
+    title: '是否取票',
+    dataIndex: 'isGet',
+    render: (text) => {
+      if (text)
+        return '已取票'
+      else
+        return '未取票'
     },
-  ]
+  }, {
+    title: '是否退票',
+    dataIndex: 'isReback',
+    render: (text) => {
+      if (text)
+        return '已退票'
+      else
+        return '未退票'
+    },
+  }, ]
 
   return (
     <div>

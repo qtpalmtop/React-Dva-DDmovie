@@ -28,7 +28,7 @@ const List = ({
 
   const handleMenuClick = (record, e) => {
     if (e.key === '1') {
-      onEditItem(record)
+      onEditItem(record.id)
     }
   }
 
@@ -57,7 +57,7 @@ const List = ({
     key: 'operation',
     width: 100,
     render: (text, record) => {
-      return <DropOption onMenuClick={e => handleMenuClick(record, e)} menuOptions={[{ key: '1', name: '购票' }]} />
+      return <Link to='/order'><a>订票</a></Link>
     },
   }, ]
 
